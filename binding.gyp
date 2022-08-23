@@ -4,7 +4,9 @@
       'target_name': 'nedis',
       'sources': [ 'src/nedis.cc' ],
       'include_dirs': ["<!@(node -p \"require('node-addon-api').include\")"],
-      'dependencies': ["<!(node -p \"require('node-addon-api').gyp\")"],
+      "dependencies": [
+        "deps/hiredis.gyp:hiredis"
+      ],
       'cflags!': [ '-fno-exceptions' ],
       'cflags_cc!': [ '-fno-exceptions' ],
       'xcode_settings': {
